@@ -12,7 +12,7 @@ async def upload_resume(file: UploadFile = File(...)):
         for page in reader.pages:
             page_text = page.extract_text()
             if page_text is not None:
-                texts.append(page.extract_text())
+                texts.append(page_text)
             else:
                 return {"error": "Unable to extract text from the page {page}."}
         combined_text = "".join(texts)
