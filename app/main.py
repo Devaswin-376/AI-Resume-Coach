@@ -26,8 +26,11 @@ def analyze_resume(resume_text):
     
     {resume_text}
     """
-    response = model.generate_content(prompt)
-    return response.text
+    try:
+        response = model.generate_content(prompt)
+        return response.text
+    except Exception as e:
+        return {"error": str(e)}
 
 @app.post("/upload")
 async def upload_resume(file: UploadFile = File(...)):
