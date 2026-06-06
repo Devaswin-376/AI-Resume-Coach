@@ -1,14 +1,7 @@
 # AI Resume Coach
 
-AI powered resume feedback tool built with FastAPI and Gemini.
+AI powered resume feedback tool built with FastAPI and Gemini.AI based resume analysis with recommendations on projects,skills,job roles.
 
----
-
-## Features
-
-- Upload PDF Resume
-- Extract resume contents
-- AI powered resume analysis
 ---
 
 ## Tech Stack
@@ -23,7 +16,9 @@ AI powered resume feedback tool built with FastAPI and Gemini.
 
 ## Features
 
-- Resume content analysis
+- Upload PDF Resume
+- Extract resume contents
+- AI powered resume analysis
 - Resume score 
 - AI based job,project recommendations
 - Skill gap analysis
@@ -58,6 +53,14 @@ uvicorn app.main:app --reload
 http://127.0.0.1:8000/docs↗️
 ----
 
+## Future Enhancement
+
+- Job role based Resume prepration
+- Learning pathway suggetion
+- Job role based Interview preparation.
+- Resume based questionnaire system
+  
+
 ##  Author
 
 Devaswin K.S  
@@ -67,3 +70,4 @@ Python Backend Developer
 
 ## Status
 In development
+
