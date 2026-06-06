@@ -13,6 +13,14 @@ model = genai.GenerativeModel("gemini-2.5-flash")
 
 def analyze_resume(resume_text):
     prompt = f"""
+    Determine whether the uploaded document is a resume/CV. 
+    If it is not, return:
+    {{
+    "is_resume": false,
+    "message": "Uploaded document is not a resume."
+    }}
+    
+    If it is,
     Analyze this resume and provide :
     
     1. Candidate summary
@@ -49,7 +57,10 @@ def analyze_resume(resume_text):
         return parsed_response
     
     except Exception as e:
-        return {"error": str(e)}
+        return {
+            "error": "AI service temporarily unavailable. Please try again later.",
+            "details": str(e)
+            }
 
 @app.post("/upload")
 async def upload_resume(file: UploadFile = File(...)):
