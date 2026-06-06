@@ -57,8 +57,8 @@ http://127.0.0.1:8000/docs↗️
 
 ## Future Enhancement
 
-- Job role based Resume prepration
-- Learning pathway suggetion
+- Job role based Resume preparation
+- Learning pathway suggestion
 - Job role based Interview preparation.
 - Resume based questionnaire system
 ---
