@@ -19,8 +19,9 @@ async function analyzeResume() {
         const data = await response.json();
 
         if (data.error) {
+            alert("AI services temporarily Unavailable. Please try again later.");
             document.getElementById("result").innerHTML =
-            `<p>${data.error}</p>`;
+            `<p>${data.error}AI servies temporarly Unavailable.Please try again Later</p>`;
             return;
         }
 

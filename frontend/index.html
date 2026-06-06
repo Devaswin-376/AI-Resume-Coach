@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Resume Feedback System</title>
+    <title>Resume Analysis System</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Resume Feedback System</h1>
+        <div class="header">
+            <h1>Resume Analysis System</h1>
+            <p>AI-powered resume analysis using Gemini</p>
+        </div>
 
-        <input type="file" id="resumeFile" accept=".pdf">
+        <div class="upload-section">
+            <label for="resumeFile">Upload your resume (PDF):</label>
+            <input type="file" id="resumeFile" accept=".pdf">
 
-        <button onclick="analyzeResume()">
-            Analyze Resume
-        </button>
+            <button onclick="analyzeResume()">
+                Analyze Resume
+            </button>
+        </div>
+
+        <div id="loading" class="hidden">
+            Analyzing Resume...
+        </div>
 
         <div id="result"></div>
+        
     </div>
 
     <script src="script.js"></script>
