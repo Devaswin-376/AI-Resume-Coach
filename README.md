@@ -50,9 +50,9 @@ Create .env file (do not commit it).
 uvicorn app.main:app --reload
 ```
 ### API will be available at: 
-```
+
 http://127.0.0.1:8000/docs↗️
-```
+
 ----
 
 ## Future Enhancement
@@ -61,7 +61,7 @@ http://127.0.0.1:8000/docs↗️
 - Learning pathway suggetion
 - Job role based Interview preparation.
 - Resume based questionnaire system
-  
+---
 
 ##  Author
 
