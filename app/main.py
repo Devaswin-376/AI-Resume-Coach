@@ -3,6 +3,7 @@ from PyPDF2 import PdfReader
 from dotenv import load_dotenv
 import os
 import google.generativeai as genai
+import json
 
 app = FastAPI(title = "Resume Feedback API")
 load_dotenv()
@@ -22,13 +23,31 @@ def analyze_resume(resume_text):
     6. Recommended Projects
     7. Resume Score (0-100)
     
+    Return ONLY valid JSON that can be parseable by the Python json.loads() in the following format:
+
+    {{
+    "candidate_summary": "",
+    "technical_skills": [],
+    "projects": [],
+    "job_roles": [],
+    "skill_gaps": [],
+    "recommended_projects": [],
+    "resume_score": 0
+    }}
+    
     Resume:
     
     {resume_text}
     """
     try:
         response = model.generate_content(prompt)
-        return response.text
+        cleaned_response = response.text.strip()
+        
+        if cleaned_response.startswith("```json") and cleaned_response.endswith("```"):
+            cleaned_response = cleaned_response.replace("```json", "")[:-3].strip()
+        parsed_response = json.loads(cleaned_response)
+        return parsed_response
+    
     except Exception as e:
         return {"error": str(e)}
 
