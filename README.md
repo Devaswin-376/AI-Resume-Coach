@@ -25,10 +25,11 @@ AI powered resume feedback tool built with FastAPI and Gemini.
 - Skill gap analysis
 
 ##  Author
-
+```
 Devaswin K.S
 Diploma in Computer Engineering
 Python Backend Developer
+```
 
 ## Status
 In development
