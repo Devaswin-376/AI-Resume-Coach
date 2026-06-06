@@ -49,8 +49,10 @@ Create .env file (do not commit it).
 ```bash
 uvicorn app.main:app --reload
 ```
-### API will be available at:
+### API will be available at: 
+```
 http://127.0.0.1:8000/docs↗️
+```
 ----
 
 ## Future Enhancement
