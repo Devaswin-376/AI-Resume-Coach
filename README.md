@@ -14,5 +14,6 @@ AI powered resume feedback tool built with FastAPI and Gemini.
 - PyPDF2
 - Gemini API
 
+
 ## Status
 In development
