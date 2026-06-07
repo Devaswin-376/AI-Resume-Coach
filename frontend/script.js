@@ -18,45 +18,56 @@ async function analyzeResume() {
 
         const data = await response.json();
 
-        if (data.error) {
-            alert("AI services temporarily Unavailable. Please try again later.");
-            document.getElementById("result").innerHTML =
-            `<p>${data.error}AI servies temporarly Unavailable.Please try again Later</p>`;
+        if (data.analysis.error) {
+            document.getElementById('result').innerHTML = data.analysis.error;
             return;
         }
 
         document.getElementById("result").innerHTML = `
-            <h2>Resume Score: ${data.analysis.resume_score}</h2>
+            <div class="score-card">
+                <h2>Resume Score: ${data.analysis.resume_score}</h2>
+            </div>
 
-            <h3>Candidate Summary</h3>
-            <p>${data.analysis.candidate_summary}</p>
+            <div class="section">
+                <h3>Candidate Summary</h3>
+                <p>${data.analysis.candidate_summary}</p>
+            </div>
 
-            <h3>Technical Skills</h3>
-            <ul>
-                ${data.analysis.technical_skills.map(skill =>
-                    `<li>${skill}</li>`
-                ).join("")}
-            </ul>
+            <div class="section">
+                <h3>Technical Skills</h3>
+                <ul>
+                    ${data.analysis.technical_skills.map(skill =>
+                        `<li>${skill}</li>`
+                    ).join("")}
+                </ul>
+            </div>
 
-            <h3>Recommended Job Roles</h3>
-            <ul>
-                ${data.analysis.job_roles.map(role =>
-                    `<li>${role}</li>`
-                ).join("")}
-            </ul>
+            <div class="section">
+                <h3>Recommended Job Roles</h3>
+                <ul>
+                    ${data.analysis.job_roles.map(role =>
+                        `<li>${role}</li>`
+                    ).join("")}
+                </ul>
+            </div>
 
-            <h3>Skill Gaps</h3>
-            <ul>
-                ${data.analysis.skill_gaps.map(gap =>
-                    `<li>${gap}</li>`
-                ).join("")}
-            </ul>
-            <h3>Recommended projects</h3>
-            <ul>
-                ${data.analysis.recommended_projects.map(project => 
+            <div class="section">
+                <h3>Skill Gaps</h3>
+                <ul>
+                    ${data.analysis.skill_gaps.map(gap =>
+                        `<li>${gap}</li>`
+                    ).join("")}
+                </ul>
+            </div>
+
+            <div class="section">
+                <h3>Recommended projects</h3>
+                <ul>
+                    ${data.analysis.recommended_projects.map(project => 
                     `<li>${project}</li>`
                 ).join("")}
-            </ul>
+                </ul>
+            </div>
         `;
 
     }
