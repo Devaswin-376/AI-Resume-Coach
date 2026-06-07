@@ -44,6 +44,8 @@ pip install -r requirements.txt
 ### 4. Set environment variables
 ```bash
 Create .env file (do not commit it).
+Create API key from Google AI studio
+Paste the API key in .env
 ```
 ### 5. Start the server
 ```bash
