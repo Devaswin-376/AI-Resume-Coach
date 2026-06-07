@@ -11,7 +11,7 @@ async function analyzeResume() {
     formData.append('file', file);
 
     try{
-        const response = await fetch('https://ai-resume-coach-4zdj.onrender.com/upload', {
+        const response = await fetch('https://ai-resume-coach-tau.vercel.app/upload', {
             method: 'POST',
             body: formData
         });
