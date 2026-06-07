@@ -85,4 +85,4 @@ async def upload_resume(file: UploadFile = File(...)):
         analysis = analyze_resume(combined_text)
         return {"analysis": analysis}
     else:
-        return {"error": "Unsupported filetype. PLease upload a different file."}
+        return {"error": "Unsupported filetype. Please upload a different file."}
