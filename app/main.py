@@ -39,7 +39,7 @@ def analyze_resume(resume_text):
     6. Recommended Projects
     7. Resume Score (0-100)
     
-    Return ONLY valid JSON that can be parseable by the Python json.loads() in the following format:
+    Return ONLY valid JSON that can be parseable by the Python json.loads() in the following format without categorising the skills:
 
     {{
     "candidate_summary": "",
